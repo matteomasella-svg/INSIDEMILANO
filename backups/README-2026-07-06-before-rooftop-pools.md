@@ -4,9 +4,7 @@ Mobile-first web guide for guests of 2EMME Apartments in Milan.
 
 ## Overview
 
-This project is a mobile-first HTML guide designed for smartphone use. It organizes Milan recommendations into clear macro areas with large buttons, strong contrast, and a visual identity aligned with the 2EMME brand palette.
-
-The main guide lives in `index.html`. Seasonal or special-focus guide sections can also live as dedicated HTML pages when they are useful for guests and should remain easy to share directly.
+This project is a single-page HTML guide designed for smartphone use. It organizes Milan recommendations into clear macro areas with large buttons, strong contrast, and a visual identity aligned with the 2EMME brand palette.
 
 ## Live content areas
 
@@ -17,9 +15,6 @@ The guide includes:
   - Ethnic and NoLo places
   - Pizza
   - Cocktail bars
-- Summer Rooftop Pool
-  - Dedicated summer page for rooftop pools, hotel terraces and pool bars
-  - Practical notes on access, reservation and guest suitability
 - Culture
   - Always-free museums
   - First Sunday free museum reminder
@@ -54,7 +49,6 @@ Approximate content included in the guide:
 | Ethnic / NoLo | 8 |
 | Pizza | 6 |
 | Cocktail bars | 10 |
-| Summer rooftop pool guide | 7 |
 | Always-free museums | 5 |
 | FAI & house museums | 4 |
 | Monumentale walking tour stops | 5 |
@@ -66,7 +60,7 @@ Approximate content included in the guide:
 | Nightlife | 17 |
 | Safety & emergency | 12 |
 
-Total visible cards/items: approximately 120.
+Total visible cards/items: approximately 113.
 
 ## Tech stack
 
@@ -78,14 +72,13 @@ Total visible cards/items: approximately 120.
 - Google Maps search links
 - No build step required
 
-## Main files
+## Main file
 
 ```text
 index.html
-estate-rooftop-piscina.html
 ```
 
-`index.html` contains the main single-page guide. `estate-rooftop-piscina.html` is a dedicated summer section for the best rooftop pools and pool terraces in Milan.
+The entire application is contained in `index.html`.
 
 ## Development
 
@@ -105,8 +98,7 @@ http://localhost:8080
 
 - Google Translate may not always appear when opened as a local `file://` URL. It is more reliable when served via localhost or deployed online.
 - The guide is intentionally mobile-first and avoids horizontal scrolling.
-- All main guide content cards are rendered from JavaScript arrays inside `index.html`.
-- Dedicated seasonal pages should keep the same mobile-first visual language and practical guest-oriented tone.
+- All content cards are rendered from JavaScript arrays inside `index.html`.
 - Basic smoke tests run in the browser console to catch missing render targets or tabs.
 
 ## Brand palette
