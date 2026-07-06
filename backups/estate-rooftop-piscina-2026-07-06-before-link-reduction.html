@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang='it' class='scroll-smooth'>
+<head>
+  <meta charset='UTF-8' />
+  <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+  <title>2EMME Insider Guide Milano - Rooftop con Piscina</title>
+  <script src='https://cdn.tailwindcss.com'></script>
+  <link href='https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&display=swap' rel='stylesheet'>
+  <style>
+    :root { --dark:#001f24; --ottanio:#004D54; --magenta:#DB4F61; --menta:#54C4A6; --ice:#BFEBFF; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:'Plus Jakarta Sans',sans-serif; background:var(--dark); color:white; overflow-x:hidden; }
+    .page-bg { min-height:100vh; background:radial-gradient(circle at top right,rgba(84,196,166,.22),transparent 34%),linear-gradient(180deg,var(--ottanio) 0%,#002d32 42%,var(--dark) 100%); }
+    .brand-card,.flat-card,.place-card { background:rgba(0,0,0,.24); border:2px solid rgba(255,255,255,.10); box-shadow:0 18px 35px rgba(0,0,0,.18); }
+    .brand-card { background:var(--ottanio); border-radius:32px; }
+    .flat-card,.place-card { border-radius:28px; }
+    .section-title { color:var(--ice); font-size:13px; font-weight:900; text-transform:uppercase; letter-spacing:.22em; font-style:italic; }
+    .macro-title { font-size:clamp(40px,11vw,72px); line-height:.88; font-weight:900; letter-spacing:-.07em; }
+    .macro-subtitle { color:rgba(255,255,255,.76); font-size:17px; line-height:1.65; font-weight:600; }
+    .place-card { padding:24px; border-left:6px solid var(--menta); }
+    .accent-magenta { border-left-color:var(--magenta); }
+    .accent-ice { border-left-color:var(--ice); }
+    .place-title { font-weight:900; font-size:22px; line-height:1.1; letter-spacing:-.03em; }
+    .place-meta { color:rgba(255,255,255,.62); font-size:14px; line-height:1.55; font-weight:800; text-transform:uppercase; margin-top:9px; }
+    .place-note { color:rgba(255,255,255,.72); font-size:14px; line-height:1.55; font-weight:800; margin-top:10px; }
+    .place-text { color:rgba(255,255,255,.80); font-size:16px; line-height:1.65; margin-top:16px; font-weight:600; }
+    .btn-row { display:flex; flex-wrap:wrap; gap:10px; margin-top:18px; }
+    .btn { display:inline-flex; align-items:center; justify-content:center; min-height:46px; border-radius:16px; padding:.75rem 1rem; font-size:13px; font-weight:900; white-space:nowrap; text-decoration:none; letter-spacing:.06em; }
+    .btn-call { background:var(--menta); color:var(--dark); }
+    .btn-map { background:rgba(255,255,255,.10); color:white; border:1px solid rgba(255,255,255,.14); }
+    @media(max-width:390px){.place-card{padding:20px}.btn{font-size:12px;padding:.7rem .85rem}.macro-title{font-size:40px}}
+  </style>
+</head>
+<body>
+  <div class='page-bg'>
+    <header class='px-5 pt-10 pb-8 text-center'>
+      <div class='max-w-4xl mx-auto'>
+        <div class='brand-card p-7 text-center'>
+          <div class='text-[#BFEBFF] text-6xl sm:text-7xl font-black tracking-tight leading-none'>2EMME</div>
+          <div class='text-[#DB4F61] text-3xl sm:text-4xl font-black tracking-[0.14em] mt-2'>APARTMENTS</div>
+          <div class='w-24 h-[2px] bg-white/20 mx-auto my-5'></div>
+          <div class='text-white/70 uppercase tracking-[0.32em] text-xs font-bold'>Milano Vacation Rentals</div>
+        </div>
+        <div class='mt-7'>
+          <p class='section-title'>Speciale Estate 2026</p>
+          <h1 class='macro-title mt-4'>ROOFTOP CON PISCINA</h1>
+          <p class='macro-subtitle mt-6 max-w-2xl mx-auto'>Una selezione breve e pratica dei migliori indirizzi milanesi dove cercare piscina, terrazza, skyline e aperitivo. Prenotare sempre: accessi, orari e day pass cambiano spesso.</p>
+        </div>
+      </div>
+    </header>
+    <main class='p-5 sm:p-7 max-w-4xl mx-auto space-y-5 pb-12'>
+      <section class='flat-card p-6'>
+        <p class='section-title'>Come proporli agli ospiti</p>
+        <p class='macro-subtitle mt-4'>Per un soggiorno breve, le scelte piu facili da consigliare sono Ceresio 7 per un momento premium, Hotel VIU per aperitivo serale by the pool, I Mirador per Navigli e lunch estivo, Vertigo/nhow per Tortona. Casa Brera e Principe di Savoia sono piu hotel-oriented: ottimi da conoscere, ma da verificare in fase di prenotazione.</p>
+      </section>
+      <article class='place-card accent-magenta'>
+        <h2 class='place-title'>Ceresio 7 Pools & Restaurant</h2>
+        <p class='place-meta'>Via Ceresio 7 · Chinatown / Porta Volta · Premium</p>
+        <p class='place-note'>Accesso piscina/esperienze by the pool da prenotare; indicato per ospiti che cercano la Milano piu scenografica.</p>
+        <p class='place-text'>Due piscine sul tetto, skyline a 360 gradi, ristorante e American Bar. E la proposta piu iconica per aperitivo, pranzo o giornata estiva elegante.</p>
+        <div class='btn-row'><a class='btn btn-call' href='tel:0231039221'>CHIAMA</a><a class='btn btn-map' target='_blank' rel='noopener' href='https://www.ceresio7.com/en/milano/pools/'>WEB</a><a class='btn btn-map' target='_blank' rel='noopener' href='https://www.google.com/maps/search/?api=1&query=Via+Ceresio+7+Milano'>MAP</a></div>
+      </article>
+      <article class='place-card'>
+        <h2 class='place-title'>The VIU Terrace - Hotel VIU Milan</h2>
+        <p class='place-meta'>Via Fioravanti 6 · Monumentale / Chinatown · Aperitivo serale</p>
+        <p class='place-note'>Piscina riservata agli ospiti hotel fino alle 18:00; dalle 18:30 alle 23:30 accesso esterni per aperitivo o drink, salvo eventi privati.</p>
+        <p class='place-text'>Rooftop all'ottavo piano con infinity pool e vista 360 gradi. Consiglio pratico: proporlo per golden hour e drink, non come day-pool classico.</p>
+        <div class='btn-row'><a class='btn btn-map' target='_blank' rel='noopener' href='https://www.hotelviumilan.com/en/entertainment/'>WEB</a><a class='btn btn-map' target='_blank' rel='noopener' href='https://www.google.com/maps/search/?api=1&query=Hotel+VIU+Milan+Via+Fioravanti+6'>MAP</a></div>
+      </article>
+      <article class='place-card accent-ice'>
+        <h2 class='place-title'>Vertigo Rooftop Pool & Bar - nhow Milano</h2>
+        <p class='place-meta'>Via Tortona 35 · Tortona Design District · Rooftop pool bar</p>
+        <p class='place-note'>Verificare disponibilita e formule day use/day pass prima di confermare agli ospiti.</p>
+        <p class='place-text'>Infinity pool, cocktail bar e ristorante rooftop in zona Tortona. Molto adatto a ospiti giovani, design-oriented o in cerca di un indirizzo meno classico.</p>
+        <div class='btn-row'><a class='btn btn-map' target='_blank' rel='noopener' href='https://www.nhow-hotels.com/en/nhow-milan/vertigo'>WEB</a><a class='btn btn-map' target='_blank' rel='noopener' href='https://www.google.com/maps/search/?api=1&query=nhow+Milano+Via+Tortona+35'>MAP</a></div>
+      </article>
+      <article class='place-card'>
+        <h2 class='place-title'>I Mirador - 21 House of Stories Navigli</h2>
+        <p class='place-meta'>Via Ascanio Sforza 7 · Navigli · Lunch + pool</p>
+        <p class='place-note'>La formula estiva ufficiale segnala accesso piscina con pranzo mediterraneo incluso; condizioni durante la prenotazione.</p>
+        <p class='place-text'>Terrazze alte sui Navigli, mood mediterraneo e piscina. Da proporre a chi vuole un'esperienza estiva piu informale prima di una serata in Darsena.</p>
+        <div class='btn-row'><a class='btn btn-call' href='tel:0289079880'>CHIAMA</a><a class='btn btn-map' target='_blank' rel='noopener' href='https://21houseofstories.com/en/milano-navigli/i-mirador/'>WEB</a><a class='btn btn-map' target='_blank' rel='noopener' href='https://www.google.com/maps/search/?api=1&query=21+House+of+Stories+Navigli+Via+Ascanio+Sforza+7'>MAP</a></div>
+      </article>
+      <article class='place-card accent-magenta'>
+        <h2 class='place-title'>Casa Brera - Etereo Rooftop</h2>
+        <p class='place-meta'>Piazzetta M. Bossi 2 · Brera / Scala · Luxury hotel</p>
+        <p class='place-note'>Rooftop con restaurant, skybar e outdoor pool; accesso piscina da verificare per non ospiti.</p>
+        <p class='place-text'>Indirizzo nuovo e molto elegante, con vista su Duomo, Scala e centro storico. Ideale per ospiti design/luxury, piu come cena o drink panoramico che come piscina pubblica.</p>
+        <div class='btn-row'><a class='btn btn-map' target='_blank' rel='noopener' href='https://www.marriott.com/en-us/hotels/milcb-casa-brera-a-luxury-collection-hotel-milan/overview/'>WEB</a><a class='btn btn-map' target='_blank' rel='noopener' href='https://www.google.com/maps/search/?api=1&query=Casa+Brera+Milan'>MAP</a></div>
+      </article>
+      <article class='place-card'>
+        <h2 class='place-title'>Principe di Savoia - Club 10</h2>
+        <p class='place-meta'>Piazza della Repubblica 17 · Porta Nuova · Hotel guest / spa member</p>
+        <p class='place-note'>Accesso indicato per ospiti hotel e membri spa; non proporre come day pass senza conferma diretta.</p>
+        <p class='place-text'>Piscina riscaldata, idromassaggio, rooftop terrace e vista su Porta Nuova. Molto utile da conoscere per ospiti luxury o per chi soggiorna in hotel simili.</p>
+        <div class='btn-row'><a class='btn btn-map' target='_blank' rel='noopener' href='https://www.dorchestercollection.com/milan/hotel-principe-di-savoia/spa-wellness'>WEB</a><a class='btn btn-map' target='_blank' rel='noopener' href='https://www.google.com/maps/search/?api=1&query=Principe+di+Savoia+Milano'>MAP</a></div>
+      </article>
+      <article class='place-card accent-ice'>
+        <h2 class='place-title'>Sina De La Ville</h2>
+        <p class='place-meta'>Via Hoepli 6 · Duomo / San Babila · Rooftop pool hotel</p>
+        <p class='place-note'>Piscina rooftop nell'area wellness; accesso esterni da ricontrollare con la struttura.</p>
+        <p class='place-text'>Soluzione centralissima, a pochi minuti dal Duomo, con rooftop pool e area benessere. Piu funzionale che scenografica, buona per ospiti che vogliono restare in centro.</p>
+        <div class='btn-row'><a class='btn btn-call' href='tel:028791311'>CHIAMA</a><a class='btn btn-map' target='_blank' rel='noopener' href='https://www.sinahotels.com/en/h/sina-de-la-ville-milan/hotel-with-pool.html'>WEB</a><a class='btn btn-map' target='_blank' rel='noopener' href='https://www.google.com/maps/search/?api=1&query=Sina+De+La+Ville+Via+Hoepli+6+Milano'>MAP</a></div>
+      </article>
+    </main>
+  </div>
+</body>
+</html>
