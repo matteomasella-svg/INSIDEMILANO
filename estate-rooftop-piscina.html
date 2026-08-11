@@ -5,45 +5,42 @@
   <meta name='viewport' content='width=device-width, initial-scale=1.0' />
   <title>2EMME Insider Guide Milano - Rooftop con Piscina</title>
   <script src='https://cdn.tailwindcss.com'></script>
-  <link href='https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&display=swap' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Libre+Franklin:ital,wght@0,700;0,800;0,900;1,700&display=swap' rel='stylesheet'>
   <style>
-    :root { --dark:#001f24; --ottanio:#004D54; --magenta:#DB4F61; --menta:#54C4A6; --ice:#BFEBFF; }
+    :root { --paper:#f1e7d4; --paper-light:#fbf6ea; --ink:#173b67; --ink-dark:#0d2c50; --brick:#a84432; --sun:#efb842; --sky:#8eb9c7; --dark:var(--ink-dark); --ottanio:var(--ink); --magenta:var(--brick); --menta:var(--sun); --ice:var(--sky); }
     * { box-sizing:border-box; }
-    body { margin:0; font-family:'Plus Jakarta Sans',sans-serif; background:var(--dark); color:white; overflow-x:hidden; }
-    .page-bg { min-height:100vh; background:radial-gradient(circle at top right,rgba(84,196,166,.22),transparent 34%),linear-gradient(180deg,var(--ottanio) 0%,#002d32 42%,var(--dark) 100%); }
-    .brand-card,.flat-card,.place-card { background:rgba(0,0,0,.24); border:2px solid rgba(255,255,255,.10); box-shadow:0 18px 35px rgba(0,0,0,.18); }
-    .brand-card { background:var(--ottanio); border-radius:32px; }
-    .flat-card,.place-card { border-radius:28px; }
-    .section-title { color:var(--ice); font-size:13px; font-weight:900; text-transform:uppercase; letter-spacing:.22em; font-style:italic; }
-    .macro-title { font-size:clamp(40px,11vw,72px); line-height:.88; font-weight:900; letter-spacing:-.07em; }
-    .macro-subtitle { color:rgba(255,255,255,.76); font-size:17px; line-height:1.65; font-weight:600; }
-    .place-card { padding:24px; border-left:6px solid var(--menta); }
+    body { margin:0; font-family:'DM Sans',sans-serif; background:var(--paper); color:var(--ink-dark); overflow-x:hidden; }
+    .page-bg { min-height:100vh; background:var(--paper); }
+    .flat-card,.place-card { background:var(--paper-light); border:1px solid rgba(23,59,103,.18); box-shadow:0 9px 22px rgba(13,44,80,.07); border-radius:6px; }
+    .hero-editorial { position:relative; width:min(100%,760px); margin:0 auto; overflow:hidden; border-radius:6px; border:1px solid rgba(23,59,103,.2); box-shadow:0 15px 32px rgba(13,44,80,.11); }
+    .hero-editorial img { display:block; width:100%; height:auto; }
+    .hero-ribbon { position:absolute; left:14px; right:14px; bottom:14px; padding:12px 16px; border-radius:3px; background:var(--brick); color:white; font:800 12px/1.25 'Libre Franklin',sans-serif; text-transform:uppercase; letter-spacing:.08em; }
+    .section-title { color:var(--brick); font:800 13px/1.2 'Libre Franklin',sans-serif; text-transform:uppercase; letter-spacing:.08em; font-style:italic; }
+    .macro-title { color:var(--ink-dark); font:900 clamp(38px,10vw,68px)/.96 'Libre Franklin',sans-serif; letter-spacing:0; }
+    .macro-subtitle { color:rgba(13,44,80,.78); font-size:17px; line-height:1.65; font-weight:600; }
+    .place-card { padding:24px; border-left:5px solid var(--sun); }
     .accent-magenta { border-left-color:var(--magenta); }
     .accent-ice { border-left-color:var(--ice); }
-    .place-title { font-weight:900; font-size:22px; line-height:1.1; letter-spacing:-.03em; }
-    .place-meta { color:rgba(255,255,255,.62); font-size:14px; line-height:1.55; font-weight:800; text-transform:uppercase; margin-top:9px; }
-    .place-note { color:rgba(255,255,255,.72); font-size:14px; line-height:1.55; font-weight:800; margin-top:10px; }
-    .place-text { color:rgba(255,255,255,.80); font-size:16px; line-height:1.65; margin-top:16px; font-weight:600; }
+    .place-title { color:var(--ink-dark); font:900 22px/1.1 'Libre Franklin',sans-serif; letter-spacing:0; }
+    .place-meta { color:rgba(13,44,80,.62); font-size:13px; line-height:1.55; font-weight:800; text-transform:uppercase; margin-top:9px; }
+    .place-note { color:var(--brick); font-size:14px; line-height:1.55; font-weight:800; margin-top:10px; }
+    .place-text { color:rgba(13,44,80,.82); font-size:16px; line-height:1.65; margin-top:16px; font-weight:600; }
     .btn-row { display:flex; flex-wrap:wrap; gap:10px; margin-top:18px; }
-    .btn { display:inline-flex; align-items:center; justify-content:center; min-height:46px; border-radius:16px; padding:.75rem 1rem; font-size:13px; font-weight:900; white-space:nowrap; text-decoration:none; letter-spacing:.06em; }
-    .btn-call { background:var(--menta); color:var(--dark); }
-    .btn-map { background:rgba(255,255,255,.10); color:white; border:1px solid rgba(255,255,255,.14); }
-    @media(max-width:390px){.place-card{padding:20px}.btn{font-size:12px;padding:.7rem .85rem}.macro-title{font-size:40px}}
+    .btn { display:inline-flex; align-items:center; justify-content:center; min-height:46px; border-radius:4px; padding:.75rem 1rem; font-size:13px; font-weight:900; white-space:nowrap; text-decoration:none; letter-spacing:.06em; }
+    .btn-call { background:var(--brick); color:white; }
+    .btn-map { background:var(--ink); color:white; border:1px solid var(--ink-dark); }
+    @media(max-width:390px){.place-card{padding:20px}.btn{font-size:12px;padding:.7rem .85rem}.macro-title{font-size:38px}.hero-ribbon{font-size:10px}}
+    @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
   </style>
 </head>
 <body>
   <div class='page-bg'>
-    <header class='px-5 pt-10 pb-8 text-center'>
+    <header class='px-5 pt-5 pb-8 text-center'>
       <div class='max-w-4xl mx-auto'>
-        <div class='brand-card p-7 text-center'>
-          <div class='text-[#BFEBFF] text-6xl sm:text-7xl font-black tracking-tight leading-none'>2EMME</div>
-          <div class='text-[#DB4F61] text-3xl sm:text-4xl font-black tracking-[0.14em] mt-2'>APARTMENTS</div>
-          <div class='w-24 h-[2px] bg-white/20 mx-auto my-5'></div>
-          <div class='text-white/70 uppercase tracking-[0.32em] text-xs font-bold'>Milano Vacation Rentals</div>
-        </div>
+        <figure class='hero-editorial'><img src='assets/illustration-rooftop.webp' width='1200' height='800' alt='Piscina rooftop illustrata con skyline di Milano'><figcaption class='hero-ribbon'>2EMME Apartments · speciale settembre 2026</figcaption></figure>
         <div class='mt-7'>
           <p class='section-title'>Speciale Settembre 2026</p>
-          <h1 class='macro-title mt-4'>ROOFTOP CON PISCINA</h1>
+          <h1 class='macro-title mt-4'>Rooftop con piscina</h1>
           <p class='macro-subtitle mt-6 max-w-2xl mx-auto'>Una selezione breve e pratica per gli ultimi giorni di piscina, le terrazze al tramonto e i roof bar di settembre. Ceresio 7 dichiara la piscina attiva nei weekend fino a fine mese; per tutte le altre strutture accessi e formule vanno confermati al momento della prenotazione.</p>
         </div>
       </div>
