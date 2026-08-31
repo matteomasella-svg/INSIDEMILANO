@@ -18,15 +18,9 @@
 
   function getPreferredLanguage() {
     const requested = new URLSearchParams(window.location.search).get('lang');
-    if (requested && LANGUAGES.includes(normalizeLanguage(requested))) {
-      return normalizeLanguage(requested);
-    }
-
+    if (requested && LANGUAGES.includes(normalizeLanguage(requested))) return normalizeLanguage(requested);
     const saved = localStorage.getItem('insideMilanoLanguage');
-    if (saved && LANGUAGES.includes(normalizeLanguage(saved))) {
-      return normalizeLanguage(saved);
-    }
-
+    if (saved && LANGUAGES.includes(normalizeLanguage(saved))) return normalizeLanguage(saved);
     return normalizeLanguage(navigator.language || navigator.userLanguage || SOURCE_LANGUAGE);
   }
 
@@ -36,7 +30,6 @@
       document.cookie = cookieName + '=;path=/;expires=Thu, 01 Jan 1970 00:00:00 GMT;SameSite=Lax';
       return;
     }
-
     document.cookie = cookieName + '=/it/' + language + ';path=/;max-age=31536000;SameSite=Lax';
   }
 
@@ -76,58 +69,13 @@
       (function(){
         var languages=['it','en','es','fr','de','pt'];
         var activeLanguage=${JSON.stringify(language)};
-
-        function markBrandAsNoTranslate(){
-          document.querySelectorAll('.brand-card').forEach(function(element){
-            element.classList.add('notranslate');
-            element.setAttribute('translate','no');
-          });
-        }
-
-        function setCookie(language){
-          if(language==='it'){
-            document.cookie='googtrans=;path=/;expires=Thu, 01 Jan 1970 00:00:00 GMT;SameSite=Lax';
-          }else{
-            document.cookie='googtrans=/it/'+language+';path=/;max-age=31536000;SameSite=Lax';
-          }
-        }
-
-        window.setInsideMilanoLanguage=function(rawLanguage){
-          var language=String(rawLanguage||'it').toLowerCase().split('-')[0];
-          if(languages.indexOf(language)===-1)language='it';
-          localStorage.setItem('insideMilanoLanguage',language);
-          setCookie(language);
-          var url=new URL(window.location.href);
-          url.searchParams.set('lang',language);
-          window.location.href=url.toString();
-        };
-
-        document.querySelectorAll('[data-im-language]').forEach(function(button){
-          button.addEventListener('click',function(){window.setInsideMilanoLanguage(button.getAttribute('data-im-language'));});
-        });
-
+        function markBrandAsNoTranslate(){document.querySelectorAll('.brand-card').forEach(function(element){element.classList.add('notranslate');element.setAttribute('translate','no');});}
+        function setCookie(language){if(language==='it'){document.cookie='googtrans=;path=/;expires=Thu, 01 Jan 1970 00:00:00 GMT;SameSite=Lax';}else{document.cookie='googtrans=/it/'+language+';path=/;max-age=31536000;SameSite=Lax';}}
+        window.setInsideMilanoLanguage=function(rawLanguage){var language=String(rawLanguage||'it').toLowerCase().split('-')[0];if(languages.indexOf(language)===-1)language='it';localStorage.setItem('insideMilanoLanguage',language);setCookie(language);var url=new URL(window.location.href);url.searchParams.set('lang',language);window.location.href=url.toString();};
+        document.querySelectorAll('[data-im-language]').forEach(function(button){button.addEventListener('click',function(){window.setInsideMilanoLanguage(button.getAttribute('data-im-language'));});});
         markBrandAsNoTranslate();
         document.documentElement.lang=activeLanguage;
-
-        window.googleTranslateElementInit=function(){
-          if(!window.google||!google.translate)return;
-          new google.translate.TranslateElement({
-            pageLanguage:'it',
-            includedLanguages:languages.join(','),
-            autoDisplay:false,
-            multilanguagePage:true
-          },'google_translate_element');
-
-          if(activeLanguage!=='it'){
-            window.setTimeout(function(){
-              var combo=document.querySelector('select.goog-te-combo');
-              if(combo){
-                combo.value=activeLanguage;
-                combo.dispatchEvent(new Event('change',{bubbles:true}));
-              }
-            },350);
-          }
-        };
+        window.googleTranslateElementInit=function(){if(!window.google||!google.translate)return;new google.translate.TranslateElement({pageLanguage:'it',includedLanguages:languages.join(','),autoDisplay:false,multilanguagePage:true},'google_translate_element');if(activeLanguage!=='it'){window.setTimeout(function(){var combo=document.querySelector('select.goog-te-combo');if(combo){combo.value=activeLanguage;combo.dispatchEvent(new Event('change',{bubbles:true}));}},350);}};
       })();
     <\/script>
     <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async><\/script>`;
@@ -135,34 +83,17 @@
   function enhance(source) {
     let html = source;
     html = html.replace(/<\/head>/i, languageCss + '\n</head>');
-
     const pageBgDouble = '<div class="page-bg">';
     const pageBgSingle = "<div class='page-bg'>";
-    if (html.includes(pageBgDouble)) {
-      html = html.replace(pageBgDouble, pageBgDouble + '\n' + languageBar);
-    } else if (html.includes(pageBgSingle)) {
-      html = html.replace(pageBgSingle, pageBgSingle + '\n' + languageBar);
-    } else {
-      html = html.replace(/<body([^>]*)>/i, function(match){ return match + '\n' + languageBar; });
-    }
-
-    html = html.replace(/<\/body>/i, '<script src="./safety-emergency.js"><\/script>\n' + languageRuntime + '\n</body>');
+    if (html.includes(pageBgDouble)) html = html.replace(pageBgDouble, pageBgDouble + '\n' + languageBar);
+    else if (html.includes(pageBgSingle)) html = html.replace(pageBgSingle, pageBgSingle + '\n' + languageBar);
+    else html = html.replace(/<body([^>]*)>/i, function(match){ return match + '\n' + languageBar; });
+    html = html.replace(/<\/body>/i, '<script src="./transport-arrival.js"><\/script>\n<script src="./safety-emergency.js"><\/script>\n' + languageRuntime + '\n</body>');
     return html;
   }
 
   fetch(sourcePath, { cache: 'no-store' })
-    .then(function(response){
-      if(!response.ok) throw new Error('HTTP ' + response.status);
-      return response.text();
-    })
-    .then(function(source){
-      const enhanced = enhance(source);
-      document.open();
-      document.write(enhanced);
-      document.close();
-    })
-    .catch(function(error){
-      console.error('Inside Milano multilingual loader:', error);
-      document.body.innerHTML = '<div style="font-family:system-ui;background:#001f24;color:white;min-height:100vh;padding:32px"><h1 style="margin:0 0 12px">Inside Milano</h1><p>Impossibile caricare temporaneamente la guida. Riprova tra poco.</p></div>';
-    });
+    .then(function(response){if(!response.ok) throw new Error('HTTP ' + response.status);return response.text();})
+    .then(function(source){const enhanced = enhance(source);document.open();document.write(enhanced);document.close();})
+    .catch(function(error){console.error('Inside Milano multilingual loader:', error);document.body.innerHTML = '<div style="font-family:system-ui;background:#001f24;color:white;min-height:100vh;padding:32px"><h1 style="margin:0 0 12px">Inside Milano</h1><p>Impossibile caricare temporaneamente la guida. Riprova tra poco.</p></div>';});
 })();
