@@ -88,7 +88,7 @@
     if (html.includes(pageBgDouble)) html = html.replace(pageBgDouble, pageBgDouble + '\n' + languageBar);
     else if (html.includes(pageBgSingle)) html = html.replace(pageBgSingle, pageBgSingle + '\n' + languageBar);
     else html = html.replace(/<body([^>]*)>/i, function(match){ return match + '\n' + languageBar; });
-    html = html.replace(/<\/body>/i, '<script src="./transport-arrival.js"><\/script>\n<script src="./safety-emergency.js"><\/script>\n' + languageRuntime + '\n</body>');
+    html = html.replace(/<\/body>/i, '<script src="./transport-arrival.js"><\/script>\n<script src="./safety-emergency.js"><\/script>\n<script src="./safety-passport-links.js"><\/script>\n' + languageRuntime + '\n</body>');
     return html;
   }
 
