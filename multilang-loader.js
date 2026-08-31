@@ -146,7 +146,7 @@
       html = html.replace(/<body([^>]*)>/i, function(match){ return match + '\n' + languageBar; });
     }
 
-    html = html.replace(/<\/body>/i, languageRuntime + '\n</body>');
+    html = html.replace(/<\/body>/i, '<script src="./safety-emergency.js"><\/script>\n' + languageRuntime + '\n</body>');
     return html;
   }
 
